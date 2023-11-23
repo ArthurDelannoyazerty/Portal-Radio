@@ -37,8 +37,16 @@ void loop() {
   // set a random font color
   TFTscreen.stroke(redRandom, greenRandom, blueRandom);
   
-  // print Hello, World! in the middle of the screen
-  TFTscreen.text("Hello, World!", 6, 57);
+  int width = TFTscreen.width();
+  char charArray[10]; 
+  itoa(width, charArray, 10);
+  TFTscreen.text(charArray, 6, 57);     // 160 px
+
+  int height = TFTscreen.height();
+  char charArray2[10]; 
+  itoa(height, charArray2, 10);
+  TFTscreen.text(charArray2, 55, 57);   // 128 px
+  
   
   // wait 200 miliseconds until change to next color
   delay(200);
