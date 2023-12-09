@@ -24,7 +24,7 @@ DFPlayer - A Mini MP3 Player For Arduino
 
 #if (defined(ARDUINO_AVR_UNO) || defined(ESP8266))   // Using a soft serial port
 #include <SoftwareSerial.h>
-SoftwareSerial softSerial(/*rx =*/11, /*tx =*/10);
+SoftwareSerial softSerial(/*rx =*/6, /*tx =*/7);
 #define FPSerial softSerial
 #else
 #define FPSerial Serial1
