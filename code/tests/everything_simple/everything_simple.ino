@@ -20,6 +20,15 @@ SoftwareSerial softSerial(/*rx =*/6, /*tx =*/7);
 #define FPSerial softSerial
 DFRobotDFPlayerMini myDFPlayer;
 
+// ---------------------------------------
+
+
+char charHour[2]; 
+char charMinute[2]; 
+char charSecond[2]; 
+
+
+
 void setup() {
   Serial.begin(9600);
 
@@ -41,9 +50,34 @@ void setup() {
       delay(0); // Code to compatible with ESP8266 watch dog.
     }
   }
+
+
+  Serial.println("Good");
 }
 
 void loop() {
-  // put your main code here, to run repeatedly:
-  Serial.println("Good");
+  DateTime now = rtc.now();
+  int hour = now.hour();
+  int minute = now.minute();
+  int second = now.second();
+
+  TFTscreen.stroke(255, 255, 255);
+  TFTscreen.setCursor(5, 5);
+  TFTscreen.println(hour);
+  TFTscreen.setCursor(5, 55);
+  TFTscreen.println(minute);
+  TFTscreen.setCursor(5, 105);
+  TFTscreen.println(second);
+
+  delay(95);
+  
+  TFTscreen.stroke(0, 0, 0);
+  TFTscreen.setCursor(5, 5);
+  TFTscreen.println(hour);
+  TFTscreen.setCursor(5, 55);
+  TFTscreen.println(minute);
+  TFTscreen.setCursor(5, 105);
+  TFTscreen.println(second);
+
 }
+
