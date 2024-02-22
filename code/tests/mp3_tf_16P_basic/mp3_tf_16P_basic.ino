@@ -59,13 +59,16 @@ void setup()
 
   myDFPlayer.volume(10);  //Set volume value. From 0 to 30
   myDFPlayer.play(1);  //Play the first mp3
+
+  pinMode(12, OUTPUT);
+  digitalWrite(12, LOW);
 }
 
 void loop()
 {
   static unsigned long timer = millis();
 
-  if (millis() - timer > 3000) {
+  if (millis() - timer > 300000) {
     timer = millis();
     myDFPlayer.next();  //Play next mp3 every 3 second.
   }
