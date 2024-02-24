@@ -7,6 +7,7 @@
 #include <TFT.h>  
 #include <SPI.h>
 
+
 // pin definition for Arduino UNO
 #define cs   10
 #define dc   9
@@ -14,7 +15,7 @@
 
 
 // create an instance of the library
-TFT TFTscreen = TFT(cs, dc, rst);
+TFT TFTscreen = TFT(cs,dc,rst);
 
 void setup() {
 

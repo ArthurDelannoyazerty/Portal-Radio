@@ -49,8 +49,8 @@ void setup() {
   Serial.begin(9600);
 
   // DS3231
-  // Wire.begin();
-  // rtc.begin();
+  Wire.begin();
+  rtc.begin();
   // rtc.adjust(DateTime(F(__DATE__),F(__TIME__)));     // Uncomment to set current time
 
 
@@ -70,22 +70,22 @@ void setup() {
 
   
   //////////////////////////// INIT TIME ON SCREEN ////////////////////////////////////////
-  // DateTime now = rtc.now();
-  // int hour = now.hour();
-  // int minute = now.minute();
-  // int second = now.second();
+  DateTime now = rtc.now();
+  int hour = now.hour();
+  int minute = now.minute();
+  int second = now.second();
 
-  // TFTscreen.stroke(255, 255, 255);
-  // TFTscreen.setCursor(5, 5);
-  // TFTscreen.println(hour);
-  // TFTscreen.setCursor(5, 55);
-  // TFTscreen.println(minute);
-  // TFTscreen.setCursor(5, 105);
-  // TFTscreen.println(second);
+  TFTscreen.stroke(255, 255, 255);
+  TFTscreen.setCursor(5, 5);
+  TFTscreen.println(hour);
+  TFTscreen.setCursor(5, 55);
+  TFTscreen.println(minute);
+  TFTscreen.setCursor(5, 105);
+  TFTscreen.println(second);
 
-  // previous_hour = hour;
-  // previous_minute = minute;
-  // previous_second = second;
+  previous_hour = hour;
+  previous_minute = minute;
+  previous_second = second;
 
 
   //////////////////////////// MUSIC ////////////////////////////////////////
@@ -100,13 +100,19 @@ void setup() {
 
     etatPrecedentLigneSW  = digitalRead(sw_pin);
     etatPrecedentLigneCLK = digitalRead(clk_pin);
+
+    Serial.println(myDFPlayer.readFolderCounts());
+    Serial.println(myDFPlayer.readFileCounts());
+    
+    myDFPlayer.volume(10);  //Set volume value. From 0 to 30
+    myDFPlayer.play();
+    power_to_speaker(true);
 }
 
 void loop() {
-  // delay(100);
-  // display_time_tft();
+  // delay(1000);
+  display_time_tft();
   refresh_compteur_rotary();
-
 }
 
 void refresh_compteur_rotary(){
@@ -130,7 +136,7 @@ void refresh_compteur_rotary(){
             compteur_rotary++;
             Serial.println(compteur_rotary);
         }
-        delay(7);
+        delay(1);
       }
     }
 }
