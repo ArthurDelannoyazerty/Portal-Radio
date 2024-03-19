@@ -1,7 +1,14 @@
 # An arduino alarm clock/music player/clock !
-
-# Wiring
-![Wiring](wiring.png)
+# Project Architecture
+- 📁 3d
+    - Some 3D model that I have not printed yet
+- 📁 code
+    - 📁 main
+        - Contains the main script
+    - 📁 tests
+        - Contains tests script for each individual element of the project (RTC, TFT, music player). A good way to debug your circuit if something is not working  
+- 📄 Wiring.fzz
+    - A Fritzing schematic of the project
 
 # Components
 - 1 Arduino UNO
@@ -26,16 +33,6 @@
 - SoftwareSerial
 - DFRobotDFPlayerMini
 
-# Project Architecture
-- 📁 3d
-    - Some 3D model that I have not printed yet
-- 📁 code
-    - 📁 main
-        - Contains the main script
-    - 📁 tests
-        - Contains tests script for each individual element of the project (RTC, TFT, music player). A good way to debug your circuit if something is not working  
-- 📄 Wiring.fzz
-    - A Fritzing schematic of the project
 
 # Project Utilisation
 There is 3 main screens. Press the simple button to switch between these !
@@ -61,4 +58,5 @@ There is 3 main screens. Press the simple button to switch between these !
 - The alarm is active only if you are in the main screen !!! Be sure to switch back to the main screen each time you use the project.
 - The 2 switch are there to manually turn off the speaker or the TFT screen (useful if you want to sleep in silence and without light)
 
-
+# Wiring
+![Wiring](wiring.PNG)
