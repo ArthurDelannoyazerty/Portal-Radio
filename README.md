@@ -55,8 +55,13 @@ There is 3 main screens. Press the simple button to switch between these !
 
 # Some useful facts
 - The music is randomly choose
-- The alarm is active only if you are in the main screen !!! Be sure to switch back to the main screen each time you use the project.
+- The alarm is active only if you are in the main screen !!! Be sure to switch back to the main screen each time you use the project
 - The 2 switch are there to manually turn off the speaker or the TFT screen (useful if you want to sleep in silence and without light)
+- When uploading the main code to arduino, be sure to uncomment the line ~148 :
+  ```arduino
+  rtc.adjust(DateTime(F(__DATE__),F(__TIME__)));
+  ```
+  in order to initialize the RTC with the time of the code compilation. Then upload again the code but with the same line commented in order to not reset the time to the compilation time every time the arduino restart.
 
 # Wiring
 ![Wiring](wiring.PNG)
