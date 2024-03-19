@@ -1,4 +1,8 @@
 # An arduino alarm clock/music player/clock !
+This project is a fully functionnal alarm clock and music player. With this device, you can play music when you want and also wake up with them. The music are store on a mini SD card and played randomly, so no worrying about hearing the same music or ring each morning !!
+
+No need to worry about the time if the device is disconected, a small battery inside the clock (RTC) keep the time ticking. You just need to replug the device and everything is working !
+
 # Project Architecture
 - 📁 3d
     - Some 3D model that I have not printed yet
