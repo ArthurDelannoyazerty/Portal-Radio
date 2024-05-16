@@ -15,7 +15,8 @@ No need to worry about the time if the device is disconected, a small battery in
      ├── 📁 main
      |    └──> Contains the main script
      └── 📁 tests
-          └──> Contains tests script for each individual element of the project (RTC, TFT, music player). A good way to debug your circuit if something is not working  
+          └──> Contains tests script for each individual element of the project (RTC, TFT, music player)
+               A good way to debug your circuit if something is not working
 ```
 
 # Components
