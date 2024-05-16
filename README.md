@@ -4,15 +4,19 @@ This project is a fully functionnal alarm clock and music player. With this devi
 No need to worry about the time if the device is disconected, a small battery inside the clock (RTC) keep the time ticking. You just need to replug the device and everything is working !
 
 # Project Architecture
-- 📁 3d
-    - Some 3D model that I have not printed yet
-- 📁 code
-    - 📁 main
-        - Contains the main script
-    - 📁 tests
-        - Contains tests script for each individual element of the project (RTC, TFT, music player). A good way to debug your circuit if something is not working  
-- 📄 Wiring.fzz
-    - A Fritzing schematic of the project
+
+```
+.
+├── 📄 Wiring.fzz
+|    └──> A Fritzing schematic of the project
+├── 📁 3d
+|    └──> Some 3D model that I have not printed yet
+└── 📁 code
+     ├── 📁 main
+     |    └──> Contains the main script
+     └── 📁 tests
+          └──> Contains tests script for each individual element of the project (RTC, TFT, music player). A good way to debug your circuit if something is not working  
+```
 
 # Components
 - 1 Arduino UNO
