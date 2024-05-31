@@ -47,6 +47,9 @@ char charHour[2];
 char charMinute[2];
 char charSecond[2];
 
+int hour_force_hour_screen = 19;
+int minute_force_hour_screen = 13;
+
 int previous_hour_tens   = -1;
 int previous_hour_unit   = -1;
 int previous_minute_tens = -1;
@@ -62,7 +65,6 @@ bool alarm_temporary_disabled = false;
 bool alarm_alarming = false;
 
 int volume_music = 11;
-
 
 int compteur_rotary = 0;
 int etatPrecedentLigneSW;
@@ -322,6 +324,18 @@ void loop() {
   }
 }
 
+
+void force_hour_screen(){
+  DateTime now = rtc.now();
+  int hour = now.hour();
+  int minute = now.minute();
+  int seconds = now.second();
+
+  if (main_state!=HOUR_SCREEN && hour==hour_force_hour_screen && minute==minute_force_hour_screen && seconds==58 && !alarm_alarming){
+    reset_tft();
+    main_state = HOUR_SCREEN;
+  }
+}
 
 void reset_tft(){
   TFTscreen.background(tft_background_color);
