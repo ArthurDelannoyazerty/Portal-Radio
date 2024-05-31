@@ -47,8 +47,8 @@ char charHour[2];
 char charMinute[2];
 char charSecond[2];
 
-int hour_force_hour_screen = 19;
-int minute_force_hour_screen = 13;
+int hour_force_hour_screen = 2;
+int minute_force_hour_screen = 30;
 
 int previous_hour_tens   = -1;
 int previous_hour_unit   = -1;
@@ -78,7 +78,7 @@ bool rotary_button_rising = false;
 
 bool temp_disable_alarm_override = false;
 
-  int clock_logo[52][2] = {
+int clock_logo[52][2] = {
     { 0, 4 },
     { 0, 5 },
     { 0, 6 },
@@ -182,6 +182,7 @@ void setup() {
 
 void loop() {
   scan_buttons();
+  force_hour_screen();
   if (!temp_disable_alarm_override) check_alarm();
   switch (main_state) {
     case HOUR_SCREEN:

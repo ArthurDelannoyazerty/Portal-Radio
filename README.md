@@ -63,10 +63,10 @@ There is 3 main screens. Press the simple button to switch between these !
 
 
 # Some useful facts
-- The music is randomly choose
-- The alarm is active only if you are in the main screen !!! Be sure to switch back to the main screen each time you use the project
+- The music is randomly choosen
+- The alarm is active only if you are in the main screen ! (At 2h30, the alarm auto change to the main screen(hour_force_hour_screen & minute_force_hour_screen line 50))
 - The 2 switch are there to manually turn off the speaker or the TFT screen (useful if you want to sleep in silence and without light)
-- When uploading the main code to arduino, be sure to uncomment the line ~148 :
+- When uploading the main code to arduino, be sure to uncomment the line ~150 :
   ```arduino
   rtc.adjust(DateTime(F(__DATE__),F(__TIME__)));
   ```
